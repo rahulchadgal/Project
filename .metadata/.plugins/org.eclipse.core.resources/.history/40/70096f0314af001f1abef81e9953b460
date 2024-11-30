@@ -1,0 +1,35 @@
+package cp;
+
+public class StringReduced {
+	public static int reducedLengthDP(String s) {
+		   int n = s.length();
+	        int[] dp = new int[n]; // DP array to store minimum reduced lengths
+	        dp[0] = 1; // Base case: the first character is itself
+
+	        for (int i = 1; i < n; i++) {
+	            dp[i] = dp[i - 1] + 1; // Default case: add the current character as-is
+
+	            // Check all possible substring lengths for reducing s[0..i]
+	            for (int len = 1; len <= (i + 1); len++) {
+	                if ((i + 1) % len == 0) { // Must divide evenly for full pattern match
+	                    String prefix = s.substring(0, len);
+	                    String repeated = prefix.repeat((i + 1) / len);
+	                    if (repeated.equals(s.substring(0, i + 1))) {
+	                        dp[i] = Math.min(dp[i], len + ((i + 1) / len - 1));
+	                    }
+	                } else if (len <= i + 1 && s.substring(0, len).equals(s.substring(i + 1 - len, i + 1))) {
+	                    dp[i] = Math.min(dp[i], dp[i - len] + 1); // Overlapping reduction
+	                }
+	            }
+	        }
+
+	        return dp[n - 1]; // The reduced length of the entire string
+	}
+
+
+	public static void main(String[] args) {
+		System.out.println(reducedLengthDP("ABCABCABCABC"));
+
+	}
+
+}

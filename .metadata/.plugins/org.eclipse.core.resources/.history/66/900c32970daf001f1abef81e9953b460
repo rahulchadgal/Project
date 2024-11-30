@@ -1,0 +1,18 @@
+package cp;
+
+public class xorKSubarray {
+
+	public static void main(String[] args) {
+		int[] a = { 4, 2, 2, 6, 4 };
+		int k = 6;
+		int ans = subarraysWithXorK(a, k);
+		System.out.println("The number of subarrays with XOR k is: " + ans);
+
+	}
+
+	private static int subarraysWithXorK(int[] a, int k) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

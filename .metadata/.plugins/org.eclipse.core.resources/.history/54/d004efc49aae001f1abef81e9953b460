@@ -1,0 +1,14 @@
+package cp;
+
+public class LongestConsecutiveNumber {
+
+	static public int longestConsecutive(int[] nums) {
+
+	}
+
+	public static void main(String[] args) {
+		System.out.println(longestConsecutive(new int[] { 0, 3, 7, 2, 5, 8, 4, 6, 0, 1 }));
+
+	}
+
+}

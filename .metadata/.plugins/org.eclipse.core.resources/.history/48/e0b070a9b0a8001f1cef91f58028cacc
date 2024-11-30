@@ -1,0 +1,36 @@
+package service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import model.Vehicle;
+import models.Floors;
+
+public class ParkingLot {
+
+	private static ParkingLot instance;
+	List<Floors> floors = new ArrayList<>();
+
+	public ParkingLot(List<Floors> floor) {
+		this.floors = floors;
+	}
+
+	public static ParkingLot getInstance(List<Floors> floors) {
+		if (instance == null)
+			return new ParkingLot(floors);
+		return instance;
+	}
+
+	public boolean parkVehicle() {
+		return true;
+	}
+
+	public Vehicle unparkVehicle() {
+		return null;
+	}
+
+	public void availableSpots() {
+
+	}
+
+}

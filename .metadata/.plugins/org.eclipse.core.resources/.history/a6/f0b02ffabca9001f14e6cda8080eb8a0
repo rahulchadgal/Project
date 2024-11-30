@@ -1,0 +1,79 @@
+package java8;
+
+import java.util.Arrays;
+
+/**
+Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's.
+Input: matrix = [[1,1,1],[1,0,1],[1,1,1]]Output: [[1,0,1],[0,0,0],[1,0,1]]
+**/
+
+/**
+ * flags column = true; row =true;
+ * 
+ * traverse the whole matrix -> if(i,j -> 0) , then turn i,0 = 0 and 0,j = 0;
+ * traverse the matrix -> if(matrixi,0 == 0 a|| mat (0, j)==0 then matrix[i][j]
+ * = 0
+ * 
+ * 
+ *
+ */
+public class Sixt {
+
+	public static void main(String[] args) {
+		int[][] matrix = { { 1, 0, 1 }, { 1, 1, 1 }, { 1, 1, 1 } };
+		int row = 3;
+		int col = 3;
+
+		boolean frow = false;
+		boolean fcol = false;
+
+		for (int j = 0; j < col; j++) {
+			if (matrix[0][j] == 0) {
+				fcol = true;
+				break;
+			}
+		}
+
+		for (int i = 0; i < row; i++) {
+			if (matrix[i][0] == 0) {
+				frow = true;
+				break;
+			}
+		}
+
+		for (int i = 1; i < row; i++) {
+			for (int j = 1; j < col; j++) {
+				if (matrix[i][j] == 0) {
+					matrix[i][0] = 0;
+					matrix[0][j] = 0;
+				}
+			}
+		}
+
+		for (int i = 1; i < row; i++) {
+			for (int j = 1; j < col; j++) {
+				if (matrix[i][0] == 0 || matrix[0][j] == 0) {
+					matrix[i][j] = 0;
+				}
+			}
+		}
+		
+		if(fcol) {
+			for(int  j = 0 ;j < col ; j++){
+				matrix[0][j] = 0;
+			}
+		}
+		
+		if(frow) {
+			for(int  j = 0 ;j < row ; j++){
+				matrix[j][0] = 0;
+			}
+		}
+
+		for (int i = 0; i < row; i++) {
+			System.out.println(Arrays.toString(matrix[i]));
+		}
+
+	}
+
+}

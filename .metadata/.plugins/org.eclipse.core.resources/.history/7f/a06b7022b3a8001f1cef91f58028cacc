@@ -1,0 +1,30 @@
+package service;
+
+import model.Vehicle;
+
+public class ParkingSpot {
+	private int spotId;
+	private Vehicle vehicle;
+
+	public ParkingSpot(int spotId) {
+		this.spotId = spotId;
+		this.vehicle = null;
+	}
+
+	public int getSpotId() {
+		return spotId;
+	}
+
+	public boolean isAvailable() {
+		return (vehicle == null);
+	}
+
+	public void parkVehicle(Vehicle vehicle) {
+		this.vehicle = vehicle;
+	}
+
+	public void unparkVehicle() {
+		this.vehicle = null;
+		;
+	}
+}

@@ -1,0 +1,17 @@
+package service;
+
+import model.Vehicle;
+
+public class ParkingSpot {
+	private int spotId;
+	private Vehicle vechile;
+
+	public ParkingSpot(int spotId) {
+		this.spotId = spotId;
+		this.vechile = null;
+	}
+
+	public int getSpotId() {
+		return spotId;
+	}
+}

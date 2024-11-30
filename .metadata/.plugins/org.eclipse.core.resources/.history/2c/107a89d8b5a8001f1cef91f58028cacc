@@ -1,0 +1,15 @@
+package service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Floor {
+
+	private int floorId;
+	private List<ParkingSpot> spots = new ArrayList<>();
+
+	public Floor(int floorId, List<ParkingSpot> spots) {
+		this.floorId = floorId;
+		this.spots = spots;
+	}
+}

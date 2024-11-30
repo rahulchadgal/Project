@@ -1,0 +1,12 @@
+package service;
+
+import model.Vehicle;
+
+public class ParkingSpot {
+	private int spotId;
+	private Vehicle vechile;
+
+	public ParkingSpot() {
+
+	}
+}

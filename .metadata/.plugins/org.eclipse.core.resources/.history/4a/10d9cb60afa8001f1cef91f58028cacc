@@ -1,0 +1,15 @@
+package service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import models.Floors;
+
+public class ParkingLot {
+
+	List<Floors> floors = new ArrayList<>();
+
+	ParkingLot(List<Floors> floor) {
+
+	}
+}

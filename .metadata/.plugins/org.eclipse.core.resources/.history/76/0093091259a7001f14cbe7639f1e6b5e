@@ -1,0 +1,63 @@
+package trie2;
+
+public class CompleteString {
+
+	class Node {
+		Node links[] = new Node[26];
+		boolean flag = false;
+
+		boolean containsKey(char ch) {
+			return links[ch - 'a'] != null;
+		}
+
+		Node get(char ch) {
+			return links[ch - 'a'];
+		}
+
+		void put(char ch, Node node) {
+			links[ch - 'a'] = node;
+		}
+
+		void setEnd() {
+			flag = true;
+		}
+
+		boolean isEnd() {
+			return flag;
+		}
+	}
+
+	class Trie {
+		private static Node root;
+
+		Trie() {
+			root = new Node();
+		}
+
+		void insert(String word) {
+			Node node = root;
+			for (char ch : word.toCharArray()) {
+				if (!node.containsKey(ch)) {
+					node.put(ch, new Node());
+				}
+				node = node.get(ch);
+			}
+			node.setEnd();
+		}
+
+	}
+
+	public static void main(String[] args) {
+		Trie trie = new CompleteString().new Trie();
+
+		// Insert words into the Trie
+		trie.insert("apple");
+		trie.insert("app");
+		trie.insert("application");
+		trie.insert("bat");
+		trie.insert("ball");
+		System.out.print(trie.toString());
+
+	}
+
+}

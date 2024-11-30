@@ -1,0 +1,99 @@
+package cp;
+
+import java.util.*;
+
+public class RatInAMaze {
+	 public static List<Integer> minimumCostToRunProject(int T, List<TestCase> testCases) {
+	        List<Integer> results = new ArrayList<>();
+
+	        for (TestCase testCase : testCases) {
+	            int N = testCase.N;
+	            int M = testCase.M;
+	            int[] F = testCase.F;
+	            int[] B = testCase.B;
+
+	            // Create a list of developers with their costs and roles
+	            List<Developer> developers = new ArrayList<>();
+	            for (int i = 0; i < F.length; i++) {
+	                developers.add(new Developer(F[i], "front", i));
+	            }
+	            for (int i = 0; i < B.length; i++) {
+	                developers.add(new Developer(B[i], "back", i));
+	            }
+
+	            // Sort developers by cost
+	            developers.sort(Comparator.comparingInt(dev -> dev.cost));
+
+	            // Assign developers
+	            int frontEndCount = 0;
+	            int backEndCount = 0;
+	            Set<Integer> usedIndices = new HashSet<>();
+	            int totalCost = 0;
+
+	            for (Developer dev : developers) {
+	                if (dev.role.equals("front") && frontEndCount < N && !usedIndices.contains(dev.index)) {
+	                    totalCost += dev.cost;
+	                    frontEndCount++;
+	                    usedIndices.add(dev.index);
+	                } else if (dev.role.equals("back") && backEndCount < M && !usedIndices.contains(dev.index)) {
+	                    totalCost += dev.cost;
+	                    backEndCount++;
+	                    usedIndices.add(dev.index);
+	                }
+
+	                // Break early if all developers are assigned
+	                if (frontEndCount == N && backEndCount == M) {
+	                    break;
+	                }
+	            }
+
+	            results.add(totalCost);
+	        }
+
+	        return results;
+	    }
+
+    public static void main(String[] args) {
+    	// Example input
+        int T = 2;
+
+        List<TestCase> testCases = new ArrayList<>();
+        testCases.add(new TestCase(1, 1, new int[]{1,2}, new int[]{2,1}));
+        testCases.add(new TestCase(1, 2, new int[]{1, 1, 1}, new int[]{1, 1, 1}));
+
+        List<Integer> results = minimumCostToRunProject(T, testCases);
+
+        // Output results
+        for (int result : results) {
+            System.out.println(result);
+        }
+    }
+}s
+
+// Helper class for test cases
+class TestCase {
+    int N;
+    int M;
+    int[] F;
+    int[] B;
+
+    TestCase(int N, int M, int[] F, int[] B) {
+        this.N = N;
+        this.M = M;
+        this.F = F;
+        this.B = B;
+    }
+}
+
+// Helper class for developers
+class Developer {
+    int cost;
+    String role;
+    int index;
+
+    Developer(int cost, String role, int index) {
+        this.cost = cost;
+        this.role = role;
+        this.index = index;
+    }
+}

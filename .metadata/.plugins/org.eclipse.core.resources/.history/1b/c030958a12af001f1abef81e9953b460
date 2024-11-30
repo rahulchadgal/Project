@@ -1,0 +1,35 @@
+package cp;
+
+import java.util.Arrays;
+
+public class StringReduced {
+	public static int reducedLengthDP(String s) {
+	    int n = s.length();
+	    int[] dp = new int[n]; // dp[i] represents the reduced length of s[0..i]
+	    Arrays.fill(dp, Integer.MAX_VALUE);
+	    
+	    dp[0] = 1; // Base case: the first character is just itself
+
+	    for (int i = 1; i < n; i++) {
+	        dp[i] = dp[i - 1] + 1; // Default: Add this character as-is
+	        for (int len = 1; len <= (i + 1) / 2; len++) {
+	            if ((i + 1) % len == 0) { // Check if we can form a repeated pattern
+	                String prefix = s.substring(0, len);
+	                String repeated = prefix.repeat((i + 1) / len);
+	                if (repeated.equals(s.substring(0, i + 1))) {
+	                    dp[i] = Math.min(dp[i], len + ((i + 1) / len - 1));
+	                }
+	            }
+	        }
+	    }
+
+	    return dp[n - 1];
+	}
+
+
+	public static void main(String[] args) {
+		System.out.println(reducedLengthDP("AAAAAA"));
+
+	}
+
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="hasShownOverlayPopupBefore" value="true"/>
+	<item key="replaceBarOpen" value="false"/>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="ShowObserver"/>
+		<list key="findhistory">
+			<item value="ShowObserver"/>
+			<item value="ShowSubject"/>
+			<item value=""/>
+		</list>
+	</section>
+</section>

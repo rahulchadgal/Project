@@ -1,0 +1,44 @@
+package trie2;
+
+public class CompleteString {
+
+	class Node {
+		Node links[] = new Node[26];
+		boolean flag = false;
+
+		boolean containsKey(char ch) {
+			return links[ch - 'a'] != null;
+		}
+
+		Node get(char ch) {
+			return links[ch - 'a'];
+		}
+
+		void put(char ch, Node node) {
+			links[ch - 'a'] = node;
+		}
+
+		void setEnd() {
+			flag = true;
+		}
+
+		boolean isEnd() {
+			return flag;
+		}
+	}
+
+	public class Trie {
+
+		private static Node root;
+
+		Trie() {
+			Node node = root;
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

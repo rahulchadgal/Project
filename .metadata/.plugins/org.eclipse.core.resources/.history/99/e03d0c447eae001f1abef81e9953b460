@@ -1,0 +1,13 @@
+package cp;
+
+public class MergedIntervals {
+	public int[][] merge(int[][] intervals) {
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
