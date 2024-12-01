@@ -1,0 +1,22 @@
+package tree;
+
+
+public class SerializeDeserialIze {
+	static class TreeNode {
+		int val;
+		TreeNode left;
+		TreeNode right;
+
+		TreeNode(int x) {
+			val = x;
+			left = null;
+			right = null;
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
