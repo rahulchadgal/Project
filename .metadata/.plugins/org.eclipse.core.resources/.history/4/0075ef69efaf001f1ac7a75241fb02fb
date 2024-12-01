@@ -1,0 +1,40 @@
+package greedy;
+
+public class TrainPlatform {
+
+	static class Train {
+		int arrived;
+		int depart;
+
+		public Train(int arrived, int depart) {
+			super();
+			this.arrived = arrived;
+			this.depart = depart;
+		}
+
+		public int getArrived() {
+			return arrived;
+		}
+
+		public int getDepart() {
+			return depart;
+		}
+	}
+
+	static int findPlatform(int arr[], int dep[]) {
+
+		for (int i = 0; i < arr.length; i++) {
+
+		}
+		// add your code here
+		return 0;
+	}
+
+	public static void main(String[] args) {
+		int[] arr = { 900, 940, 950, 1100, 1500, 1800 };
+		int[] dep = { 910, 1200, 1120, 1130, 1900, 2000 };
+
+		System.out.println(findPlatform(arr, dep));
+	}
+
+}

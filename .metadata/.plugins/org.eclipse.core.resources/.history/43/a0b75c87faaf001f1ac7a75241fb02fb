@@ -1,0 +1,14 @@
+package cp;
+
+public class TrappingWater {
+
+	public int trap(int[] height) {
+
+	}
+
+	public static void main(String[] args) {
+		int[] arr = { 4, 2, 0, 3, 2, 5 };
+
+	}
+
+}

@@ -1,0 +1,19 @@
+package dp;
+
+public class MinPathSum {
+
+	public static int minSumPath(int[][] grid) {
+		int n = grid.length;
+		int m = grid[0].length;
+
+	}
+
+	public static void main(String[] args) {
+		int matrix[][] = { { 5, 9, 6 }, { 11, 5, 2 } };
+
+		// Calculate and print the minimum sum path in the matrix
+		System.out.println(minSumPath(matrix));
+
+	}
+
+}

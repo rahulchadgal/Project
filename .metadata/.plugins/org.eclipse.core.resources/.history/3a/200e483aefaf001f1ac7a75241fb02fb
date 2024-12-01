@@ -1,0 +1,29 @@
+package greedy;
+
+public class TrainPlatform {
+
+	static class Train {
+		double arrived;
+		double depart;
+
+		public Train(double arrived, double depart) {
+			super();
+			this.arrived = arrived;
+			this.depart = depart;
+		}
+
+		public double getArrived() {
+			return arrived;
+		}
+
+		public double getDepart() {
+			return depart;
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
