@@ -1,0 +1,27 @@
+package cp;
+
+import java.util.List;
+
+public class LengthOfLIS {
+	static public int lengthOfLIS(int[] nums) {
+
+		return 0;
+	}
+
+	static private int binarySearch(List<Integer> res) {
+		
+		int l = 0 , r = res.size()-1;
+		
+		while(l <=r) {
+			int mid = 
+		}
+		return 0;
+	}
+
+	public static void main(String[] args) {
+		int[] arr = { 10, 9, 2, 5, 3, 7, 101, 18 };
+
+		System.out.println(lengthOfLIS(arr));
+	}
+
+}

@@ -1,0 +1,19 @@
+package slidingWindow;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class MinimumSlidingWindow {
+	public static String minWindow(String s, String t) {
+		Map<Character , Integer> mp = new HashMap<>();
+		
+
+		return "";
+	}
+
+	public static void main(String[] args) {
+		System.out.println(minWindow("OUZODYXAZV", "XYZ"));
+
+	}
+
+}

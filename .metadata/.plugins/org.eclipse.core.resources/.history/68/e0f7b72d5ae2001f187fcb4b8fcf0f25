@@ -1,0 +1,25 @@
+package stack;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
+
+public class nextGreaterEle {
+	public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+
+		Map<Integer, Integer> mp = new HashMap<>();
+		Stack<Integer> st = new Stack<>();
+		for (int num : nums2) {
+			while (!st.isEmpty() && st.peek() < num)
+				mp.put(st.pop(), num);
+			st.push(num);
+		}
+		return null;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

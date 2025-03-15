@@ -1,0 +1,20 @@
+package graph;
+
+public class PacificAtlanticOcean {
+
+	public static void main(String[] args)
+
+	{
+		int[][] heights = { { 1, 2, 2, 3, 5 }, { 3, 2, 3, 4, 4 }, { 2, 4, 5, 3, 1 }, { 6, 7, 1, 4, 5 },
+				{ 5, 1, 1, 2, 4 } };
+
+		System.out.println(pacificAtlantic(heights));
+
+	}
+
+	private static char[] pacificAtlantic(int[][] heights) {
+		int n = heights.length, m = heights[0].length;
+		return null;
+	}
+
+}

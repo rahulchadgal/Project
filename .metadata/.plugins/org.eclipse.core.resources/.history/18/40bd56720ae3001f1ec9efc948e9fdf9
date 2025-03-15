@@ -1,0 +1,16 @@
+package slidingWindow;
+
+import java.util.ArrayDeque;
+
+public class MaxSlidingWindow {
+	public int[] maxSlidingWindow(int[] nums, int k) {
+		int[] res = new int[nums.length - k + 1];
+		ArrayDeque<Integer> dq = new ArrayDeque<>();
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,13 @@
+package slidingWindow;
+
+public class MinimumSlidingWindow {
+	public static String minWindow(String s, String t) {
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

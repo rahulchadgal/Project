@@ -1,0 +1,54 @@
+package graph;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class PacificAtlanticOcean {
+	static int[][] dirs = { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } };
+
+	private static List<List<Integer>> pacificAtlantic(int[][] heights) {
+		List<List<Integer>> res = new ArrayList<>();
+		int n = heights.length, m = heights[0].length;
+
+		boolean[][] pac = new boolean[n][m];
+		boolean[][] atl = new boolean[n][m];
+
+		for (int i = 0; i < m; i++) {
+			dfs(0, i, pac, heights);
+			dfs(n - 1, i, atl, heights);
+		}
+
+		for (int i = 0; i < n; i++) {
+			dfs(i, 0, pac, heights);
+			dfs(i, m - 1, atl, heights);
+		}
+
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < m; j++) {
+				if (pac[i][j] && atl[i][j]) {
+					res.add(Arrays.asList(i, j));
+				}
+			}
+		}
+		return res;
+	}
+
+	private static void dfs(int i, int j, boolean[][] visited, int[][] heights) {
+		int n = heights.length, m = heights[0].length;
+		visited[i][j] = true;
+		for (int[] d : dirs) {
+			int x = i + d[0], y = j + d[1];
+			if (x >= 0 && x < n && y >= 0 && y < m && !visited[x][y] && heights[x][y] >= heights[i][j])
+				dfs(x, y, visited, heights);
+		}
+
+	}
+
+	public static void main(String[] args) {
+		int[][] heights = { { 1, 2, 2, 3, 5 }, { 3, 2, 3, 4, 4 }, { 2, 4, 5, 3, 1 }, { 6, 7, 1, 4, 5 },
+				{ 5, 1, 1, 2, 4 } };
+
+		System.out.println(pacificAtlantic(heights));
+	}
+}

@@ -1,0 +1,33 @@
+package graph;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class PacificAtlanticOcean {
+	static int[][] dirs = { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } };
+
+	private static List<List<Integer>> pacificAtlantic(int[][] heights) {
+		List<List<Integer>> res = new ArrayList<>();
+		int n = heights.length, m = heights[0].length;
+
+		boolean[][] visited = new boolean[n][m];
+
+		for (int i = 0; i < n; i++) {
+			dfs(0, i, visited, heights);
+
+		}
+		return res;
+	}
+
+	private static void dfs(int i, int i2, boolean[][] visited, int[][] heights) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public static void main(String[] args) {
+		int[][] heights = { { 1, 2, 2, 3, 5 }, { 3, 2, 3, 4, 4 }, { 2, 4, 5, 3, 1 }, { 6, 7, 1, 4, 5 },
+				{ 5, 1, 1, 2, 4 } };
+
+		System.out.println(pacificAtlantic(heights));
+	}
+}

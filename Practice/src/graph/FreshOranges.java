@@ -1,0 +1,65 @@
+package graph;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class FreshOranges {
+
+	public static void main(String[] args) {
+		int[][] grid = { { 2, 1, 1 }, { 1, 1, 0 }, { 0, 1, 1 } };
+
+		System.out.println(orangesRotting(grid));
+//		for (int i = 0; i < grid.length; i++) {
+//			System.out.println(Arrays.toString(grid[i]));
+//		}
+
+	}
+
+	public static int orangesRotting(int[][] grid) {
+		int time = -1;
+		int oranges = 0;
+		int n = grid.length, m = grid[0].length;
+		Queue<int[]> q = new LinkedList<>();
+
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < m; j++) {
+				if (grid[i][j] == 1)
+					oranges++;
+				if (grid[i][j] == 2)
+					q.add(new int[] { i, j });
+			}
+		}
+		if (oranges == 0)
+			return 0;
+		if (q.isEmpty())
+			return -1;
+
+		int[][] dirs = { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } };
+
+		while (!q.isEmpty()) {
+			int size = q.size();
+			// rottenTime++;
+			while (size-- > 0) {
+				int[] cell = q.poll();
+				int x = cell[0];
+				int y = cell[1];
+
+				for (int[] dir : dirs) {
+					int newX = x + dir[0];
+					int newY = y + dir[1];
+					if (newX >= 0 && newX < n && newY >= 0 && newY < m && grid[newX][newY] == 1) {
+						grid[newX][newY] = 2;
+						oranges--;
+						q.offer(new int[] { newX, newY });
+					}
+				}
+			}
+			time++;
+		}
+		if (oranges == 0)
+			return time;
+
+		return -1;
+	}
+
+}

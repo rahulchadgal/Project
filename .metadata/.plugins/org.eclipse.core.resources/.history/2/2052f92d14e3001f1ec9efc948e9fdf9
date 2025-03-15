@@ -1,0 +1,14 @@
+package slidingWindow;
+
+public class MinimumSlidingWindow {
+	public static String minWindow(String s, String t) {
+
+		return "";
+	}
+
+	public static void main(String[] args) {
+		System.out.println(minWindow("OUZODYXAZV", "XYZ"));
+
+	}
+
+}

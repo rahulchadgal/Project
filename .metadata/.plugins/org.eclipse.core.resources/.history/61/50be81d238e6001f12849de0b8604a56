@@ -1,0 +1,30 @@
+package graph;
+
+import java.util.Arrays;
+
+public class FreshOranges {
+
+	public static void main(String[] args) {
+		int[][] grid = { { 2, 1, 1 }, { 1, 1, 0 }, { 0, 1, 1 } };
+
+		System.out.println(orangesRotting(grid));
+//		for (int i = 0; i < grid.length; i++) {
+//			System.out.println(Arrays.toString(grid[i]));
+//		}
+
+	}
+
+	public int orangesRotting(int[][] grid) {
+		int max = -1;
+		int oranges = 0;
+		int n = grid.length, m = grid[0].length;
+
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < m; j++) {
+
+			}
+		}
+		return 0;
+	}
+
+}

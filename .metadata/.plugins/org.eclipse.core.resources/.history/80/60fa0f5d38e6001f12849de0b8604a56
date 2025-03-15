@@ -1,0 +1,50 @@
+package graph;
+
+import java.util.Arrays;
+
+public class FreshOranges {
+
+	public static void main(String[] args) {
+		int[][] grid = {[2,1,1},{1,1,0},{0,1,1}};
+
+	// System.out.println(
+	IslandAndTreasures(grid);
+		// );
+		for (int i = 0; i < grid.length; i++) {
+			System.out.println(Arrays.toString(grid[i]));
+		}
+
+	}
+
+	public int orangesRotting(int[][] grid) {
+
+	}
+
+	private static void IslandAndTreasures(int[][] grid) {
+		int n = grid.length, m = grid[0].length;
+
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < m; j++) {
+				if (grid[i][j] == 0) {
+					int count = 0;
+					dfs(grid, i, j, count);
+				}
+			}
+		}
+	}
+
+	private static void dfs(int[][] grid, int i, int j, int count) {
+		int n = grid.length, m = grid[0].length;
+
+		if (i < 0 || j < 0 || i >= n || j >= m || grid[i][j] == -1)
+			return;
+
+		grid[i][j] = Math.min(grid[i][j], count);
+		dfs(grid, i + 1, j, count + 1);
+		dfs(grid, i, j + 1, count + 1);
+		dfs(grid, i - 1, j, count + 1);
+		dfs(grid, i, j - 1, count + 1);
+
+	}
+
+}

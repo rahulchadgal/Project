@@ -1,0 +1,16 @@
+package stack;
+
+import java.util.Arrays;
+
+public class NextSmallestEle {
+	public static int[] prevSmaller(int[] A) {
+		return null;
+	}
+
+	public static void main(String[] args) {
+		int[] nums = { 4, 5, 2, 10, 8 };
+		System.out.println(Arrays.toString(prevSmaller(nums)));
+
+	}
+
+}

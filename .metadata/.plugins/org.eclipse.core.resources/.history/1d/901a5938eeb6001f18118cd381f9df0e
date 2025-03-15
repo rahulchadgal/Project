@@ -1,0 +1,35 @@
+package linkedList;
+
+import linkedList.KnthNodeRemove.Node;
+
+public class ReorderList {
+
+	public class ListNode {
+		int val;
+		ListNode next;
+
+		ListNode() {
+		}
+
+		ListNode(int val) {
+			this.val = val;
+		}
+
+		ListNode(int val, ListNode next) {
+			this.val = val;
+			this.next = next;
+		}
+	}
+
+	public static void main(String[] args) {
+		int[] arr = { 1,2,3,4 ,5};
+		ListNode head = new ListNode(arr[0]);
+		head.next = new ListNode(arr[1]);
+		head.next.next = new ListNode(arr[2]);
+		head.next.next.next = new ListNode(arr[3]);
+		head.next.next.next.next = new ListNode(arr[4]);
+
+	}
+}
+
+}

@@ -1,0 +1,14 @@
+package cp.heap;
+
+public class KmostFreqEle {
+	public static int[] topKFrequent(int[] nums, int k) {
+
+		return null;
+	}
+
+	public static void main(String[] args) {
+		int[] arr = { 1, 1, 1, 2, 2, 3 };
+		System.out.println(topKFrequent(arr, 2));
+	}
+
+}
